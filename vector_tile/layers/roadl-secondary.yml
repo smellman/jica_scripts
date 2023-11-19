@@ -8,7 +8,7 @@ filter:
     - rtt
     - '15'
 paint:
-  line-color: rgb(255,255,255)
+  line-color: '#fcd6a4'
   line-width:
     base: 1
     stops:

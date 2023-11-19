@@ -1,15 +1,192 @@
 {
-    "version": 8,
-    "name": "Global Map - Sri Lanka",
-    "metadata": {"maputnik:renderer": "mbgljs"},
-    "sources": {
-        "lka": {
-            "type": "vector",
-            "url": "pmtiles://./lka.pmtiles"
-        }
+  "version": 8,
+  "name": "Global Map - Sri Lanka",
+  "metadata": {
+    "maputnik:renderer": "mbgljs"
+  },
+  "sources": {
+    "global_map": {
+      "type": "vector",
+      "url": "pmtiles://https://tile.openstreetmap.jp/static/lka.pmtiles"
+    }
+  },
+  "center": [
+    80.476,
+    7.919
+  ],
+  "zoom": 7.5,
+  "sprite": "https://tile.openstreetmap.jp/styles/osm-bright/sprite",
+  "glyphs": "https://tile.openstreetmap.jp/fonts/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "rgb(0,0,0)"
+      }
     },
-    "sprite": "https://tile.openstreetmap.jp/styles/osm-bright/sprite",
-    "glyphs": "https://tile.openstreetmap.jp/fonts/{fontstack}/{range}.pbf",
-    "layers": [],
-    "id": "06qove9mi"
+    {
+      "id": "polbnda",
+      "type": "fill",
+      "source": "global_map",
+      "source-layer": "polbnda",
+      "paint": {
+        "fill-color": "#f2efe9"
+      }
+    },
+    {
+      "id": "riverl",
+      "type": "line",
+      "source": "global_map",
+      "source-layer": "riverl",
+      "paint": {
+        "line-color": "rgb(0,0,255)",
+        "line-width": {
+          "base": 1,
+          "stops": [
+            [
+              6,
+              0.5
+            ],
+            [
+              10,
+              2
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "inwatera",
+      "type": "fill",
+      "source": "global_map",
+      "source-layer": "inwatera",
+      "paint": {
+        "fill-color": "rgb(0,0,255)"
+      }
+    },
+    {
+      "id": "roadl-primary",
+      "type": "line",
+      "source": "global_map",
+      "source-layer": "roadl",
+      "filter": [
+        "all",
+        [
+          "==",
+          "rtt",
+          "14"
+        ]
+      ],
+      "paint": {
+        "line-color": "#fcd6a4",
+        "line-width": {
+          "base": 1,
+          "stops": [
+            [
+              6,
+              1
+            ],
+            [
+              10,
+              6
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "roadl-secondary",
+      "type": "line",
+      "source": "global_map",
+      "source-layer": "roadl",
+      "filter": [
+        "all",
+        [
+          "==",
+          "rtt",
+          "15"
+        ]
+      ],
+      "paint": {
+        "line-color": "#fcd6a4",
+        "line-width": {
+          "base": 1,
+          "stops": [
+            [
+              8,
+              1
+            ],
+            [
+              12,
+              4
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "raill-base",
+      "type": "line",
+      "source": "global_map",
+      "source-layer": "raill",
+      "paint": {
+        "line-color": "rgb(0,0,0)",
+        "line-width": {
+          "base": 1,
+          "stops": [
+            [
+              6,
+              1
+            ],
+            [
+              10,
+              6
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "raill-dot",
+      "type": "line",
+      "source": "global_map",
+      "source-layer": "raill",
+      "paint": {
+        "line-color": "rgb(255,255,255)",
+        "line-width": {
+          "base": 1,
+          "stops": [
+            [
+              6,
+              0.25
+            ],
+            [
+              10,
+              2
+            ]
+          ]
+        },
+        "line-dasharray": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "id": "airp",
+      "type": "symbol",
+      "source": "global_map",
+      "source-layer": "airp",
+      "layout": {
+        "icon-image": "airport_11",
+        "text-field": "{nam}",
+        "text-offset": [
+          0,
+          0.6
+        ]
+      }
+    }
+  ],
+  "id": "06qove9mi"
 }

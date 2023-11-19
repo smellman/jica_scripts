@@ -1,0 +1,16 @@
+id: raill-dot
+type: line
+source: global_map
+source-layer: raill
+paint:
+  line-color: rgb(255,255,255)
+  line-width:
+    base: 1
+    stops:
+      - - 6
+        - 0.25
+      - - 10
+        - 2
+  line-dasharray:
+    - 2
+    - 2

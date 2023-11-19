@@ -1,0 +1,6 @@
+id: inwatera
+type: fill
+source: global_map
+source-layer: inwatera
+paint:
+  fill-color: rgb(0,0,255)
