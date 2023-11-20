@@ -1,6 +1,6 @@
 all: install
 
-install: upgrade gdal vim p7zip tippecanoe nodejs yarn kubo docker pmtiles charites
+install: upgrade gdal vim p7zip jq tippecanoe nodejs yarn kubo docker pmtiles charites
 
 upgrade:
 	@echo upgrade
@@ -18,6 +18,10 @@ vim:
 p7zip:
 	@echo install p7zip-full
 	apt install -y p7zip-full
+
+jq:
+	@echo install jq
+	apt install -y jq
 
 tippecanoe:
 	@echo install tippecanoe dependencies
