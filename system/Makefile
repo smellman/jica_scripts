@@ -75,3 +75,10 @@ pmtiles:
 charites:
 	@echo install unvt/charites
 	npm install -g @unvt/charites
+
+mbutil:
+	@echo install mb-util
+	apt install -y python3
+	git clone https://github.com/mapbox/mbutil.git
+	cd mbutil; python3 setup.py install
+	rm -fr mbutil

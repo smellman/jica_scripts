@@ -45,3 +45,6 @@ serve:
 
 practice:
 	charites serve style-practice.yml
+
+build:
+	charites build style-practice.yml style-practice.json
