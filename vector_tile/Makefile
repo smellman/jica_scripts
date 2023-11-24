@@ -53,7 +53,4 @@ build-ipfs:
 	charites build style-ipfs.yml style-ipfs.json
 
 ipfs:
-	ipfs init --profile=lowpower
-	ipfs daemon &
 	ipfs add lka.pmtiles
-

@@ -1,6 +1,6 @@
 all: install
 
-install: upgrade gdal vim p7zip jq tippecanoe nodejs yarn kubo docker pmtiles charites
+install: upgrade gdal vim p7zip jq tippecanoe nodejs yarn kubo docker pmtiles charites mbutil
 
 upgrade:
 	@echo upgrade
@@ -82,3 +82,11 @@ mbutil:
 	git clone https://github.com/mapbox/mbutil.git
 	cd mbutil; python3 setup.py install
 	rm -fr mbutil
+
+ipfs-init:
+	@echo init ipfs
+	ipfs init --profile=lowpower
+
+ipfs-daemon:
+	@echo start ipfs daemon
+	ipfs daemon &
