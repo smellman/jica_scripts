@@ -78,7 +78,7 @@ charites:
 
 mbutil:
 	@echo install mb-util
-	apt install -y python3
+	apt install -y python3 python3-setuptools
 	git clone https://github.com/mapbox/mbutil.git
 	cd mbutil; python3 setup.py install
 	rm -fr mbutil
