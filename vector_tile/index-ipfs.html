@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vector Tile</title>
+        <meta charset='utf-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css' />
+        <script src='https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js'></script>
+        <script src="https://unpkg.com/pmtiles@2.11.0/dist/index.js"></script>
+        <style>
+          body { margin: 0; padding: 0; }
+          html, body, #map { height: 100%; }
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+        <script>
+            const protocol = new pmtiles.Protocol();
+            maplibregl.addProtocol("pmtiles",protocol.tile);
+            const map = new maplibregl.Map({
+                container: 'map',
+                style: './style-ipfs.json',
+                center: [80.476, 7.919],
+                zoom: 7,
+                hash: true,
+            })
+        </script>
+    </body>
+</html>

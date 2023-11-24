@@ -49,6 +49,9 @@ practice:
 build:
 	charites build style-practice.yml style-practice.json
 
+build-ipfs:
+	charites build style-ipfs.yml style-ipfs.json
+
 ipfs:
 	ipfs init --profile=lowpower
 	ipfs daemon &
