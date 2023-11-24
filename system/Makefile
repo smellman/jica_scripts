@@ -51,8 +51,8 @@ yarn:
 
 kubo:
 	@echo install kubo
-	wget https://github.com/ipfs/kubo/releases/download/v0.24.0/kubo_v0.24.0_linux-amd64.tar.gz
-	tar zxf kubo_v0.24.0_linux-amd64.tar.gz
+	wget https://github.com/ipfs/kubo/releases/download/v0.24.0/kubo_v0.24.0_linux-arm64.tar.gz
+	tar zxf kubo_v0.24.0_linux-arm64.tar.gz
 	sh kubo/install.sh
 	rm -fr kubo*
 
