@@ -42,3 +42,6 @@ tileserver-gl:
 
 serve:
 	docker run -p 8080:80 -v $(PWD):/usr/share/nginx/html:ro nginx
+
+practice:
+	charites serve style-practice.yml
