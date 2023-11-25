@@ -41,7 +41,7 @@ tileserver-gl:
 	  -p 80 --file /data/lka.mbtiles
 
 serve:
-	docker run -p 8080:80 -v $(PWD):/usr/share/nginx/html:ro nginx
+	docker run -p 8000:80 -v $(PWD):/usr/share/nginx/html:ro nginx
 
 practice:
 	charites serve style-practice.yml
