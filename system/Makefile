@@ -1,6 +1,8 @@
 all: install
 
-install: upgrade gdal vim p7zip jq tippecanoe nodejs kubo pmtiles charites mbutil serve tileserver-gl-light ipfs-init ipfs-daemon
+install: upgrade gdal vim p7zip jq tippecanoe nodejs kubo pmtiles charites mbutil serve tileserver-gl-light
+
+ipfs: ipfs-init ipfs-daemon
 
 upgrade:
 	@echo upgrade
