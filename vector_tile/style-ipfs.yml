@@ -6,7 +6,7 @@ sources:
   global_map:
     type: vector
     url: >-
-      pmtiles://https://smb.optgeo.org/ipfs/QmRSsj5FstJt8Rvrvp4GKG4i77yRredn8eHAuYoNkKhWpW
+      pmtiles://https://dweb.link/ipfs/QmRSsj5FstJt8Rvrvp4GKG4i77yRredn8eHAuYoNkKhWpW
 center:
   - 80.476
   - 7.919

@@ -36,13 +36,13 @@ generate:
 	  -L roadl:gmlk20/roadl_lka.geojson
 
 tileserver-gl:
-	tileserver-gl-light --port 80 --bind 0.0.0.0 --file lka.mbtiles
+	tileserver-gl-light --port 8000 --bind 0.0.0.0 --file lka.mbtiles
 
 serve:
-	serve -p 8080 .
+	serve -p 8000 .
 
 practice:
-	charites serve style-practice.yml
+	charites serve --port 8000 style-practice.yml
 
 build:
 	charites build style-practice.yml style-practice.json

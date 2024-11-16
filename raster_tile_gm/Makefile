@@ -9,4 +9,4 @@ generate_tile:
 	gdal2tiles.py --xyz -s EPSG:4326 -z 0-11 temp.vrt
 
 serve:
-	serve -p 8080 .
+	serve -p 8000 temp/

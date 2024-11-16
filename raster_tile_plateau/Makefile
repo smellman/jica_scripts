@@ -9,4 +9,4 @@ generate_tile:
 	gdal2tiles.py --xyz -z 12-18 temp.vrt
 
 serve:
-	serve -p 8080 .
+	serve -p 8000 temp/
