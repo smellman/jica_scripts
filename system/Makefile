@@ -1,6 +1,6 @@
 all: install
 
-install: upgrade gdal vim p7zip jq tippecanoe nodejs yarn kubo docker pmtiles charites mbutil
+install: upgrade gdal vim p7zip jq tippecanoe nodejs kubo pmtiles charites mbutil serve tileserver-gl-light ipfs-init ipfs-daemon
 
 upgrade:
 	@echo upgrade
@@ -42,27 +42,12 @@ nodejs:
 	apt update
 	apt install nodejs -y
 
-yarn:
-	@echo install yarn
-	curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-	echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-	apt update
-	apt install -y yarn
-
 kubo:
 	@echo install kubo
 	wget https://github.com/ipfs/kubo/releases/download/v0.31.0/kubo_v0.31.0_linux-arm64.tar.gz
 	tar zxf kubo_v0.31.0_linux-arm64.tar.gz
 	sh kubo/install.sh
 	rm -fr kubo*
-
-docker:
-	@echo install docker
-	apt install -y docker.io
-	mkdir -p $(HOME)/.docker/cli-plugins
-	curl -SL https://github.com/docker/compose/releases/download/v2.30.1/docker-compose-linux-aarch64 -o $(HOME)/.docker/cli-plugins/docker-compose
-	chown -R $(USER):$(USER) $(HOME)/.docker
-	usermod -aG docker $(USER)
 
 pmtiles:
 	@echo install pmtiles
@@ -81,6 +66,14 @@ mbutil:
 	git clone https://github.com/mapbox/mbutil.git
 	cd mbutil; python3 setup.py install
 	rm -fr mbutil
+
+serve:
+	@echo install serve
+	npm install -g serve
+
+tileserver-gl-light:
+	@echo install tileserver-gl-light
+	npm install -g tileserver-gl-light
 
 ipfs-init:
 	@echo init ipfs

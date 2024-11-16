@@ -36,12 +36,10 @@ generate:
 	  -L roadl:gmlk20/roadl_lka.geojson
 
 tileserver-gl:
-	docker run --rm -it -v $(PWD):/data -p 8080:80 \
-	  maptiler/tileserver-gl-light \
-	  -p 80 --file /data/lka.mbtiles
+	tileserver-gl-light --port 80 --bind 0.0.0.0 --file lka.mbtiles
 
 serve:
-	docker run -p 8000:80 -v $(PWD):/usr/share/nginx/html:ro nginx
+	serve -p 8080 .
 
 practice:
 	charites serve style-practice.yml

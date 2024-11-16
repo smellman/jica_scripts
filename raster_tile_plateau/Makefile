@@ -9,4 +9,4 @@ generate_tile:
 	gdal2tiles.py --xyz -z 12-18 temp.vrt
 
 serve:
-	docker run -p 8080:80 -v $(PWD)/temp:/usr/share/nginx/html:ro nginx
+	serve -p 8080 .
