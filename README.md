@@ -7,7 +7,6 @@ Setup scripts and practices for JICA seminar by Taro Matsuzawa (@smellman).
 ```bash
 $ sudo apt install -y git make
 $ git clone https://github.com/smellman/jica_scripts.git
-$ cd jica_scripts
-$ cd system
-$ sudo HOME=$HOME USER=$USER make
+$ cd jica_scripts/system
+$ sudo make
 ```
