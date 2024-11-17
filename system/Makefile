@@ -80,6 +80,7 @@ tileserver-gl-light:
 ipfs-init:
 	@echo init ipfs
 	ipfs init --profile=lowpower
+	ipfs config Addresses.Gateway /ip4/0.0.0.0/tcp/8080
 
 ipfs-daemon:
 	@echo start ipfs daemon

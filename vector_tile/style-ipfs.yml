@@ -6,7 +6,7 @@ sources:
   global_map:
     type: vector
     url: >-
-      pmtiles://https://dweb.link/ipfs/QmRSsj5FstJt8Rvrvp4GKG4i77yRredn8eHAuYoNkKhWpW
+      pmtiles://http://<your ip>:8080/ipfs/<your cid>
 center:
   - 80.476
   - 7.919
