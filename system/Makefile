@@ -1,62 +1,15 @@
 all: install
 
-install: upgrade gdal vim p7zip jq tippecanoe nodejs kubo pmtiles charites mbutil serve tileserver-gl-light
-
-ipfs: ipfs-init ipfs-daemon
+install: upgrade p7zip charites mbutil tileserver-gl-light
 
 upgrade:
 	@echo upgrade
 	apt update
 	apt dist-upgrade -y
 
-gdal:
-	@echo install gdal/ogr
-	apt install -y gdal-bin
-
-vim:
-	@echo install vim
-	apt install -y vim
-
 p7zip:
 	@echo install p7zip-full
 	apt install -y p7zip-full
-
-jq:
-	@echo install jq
-	apt install -y jq
-
-tippecanoe:
-	@echo install tippecanoe dependencies
-	apt install -y build-essential libsqlite3-dev zlib1g-dev
-	@echo install tippecanoe
-	wget https://github.com/felt/tippecanoe/archive/refs/tags/2.66.0.tar.gz
-	tar zxf 2.66.0.tar.gz
-	cd tippecanoe-2.66.0; make; make install
-	rm 2.66.0.tar.gz
-	rm -fr tippecanoe-2.66.0
-
-nodejs:
-	@echo install nodejs
-	apt install -y ca-certificates curl gnupg
-	mkdir -p /etc/apt/keyrings
-	curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
-	echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_22.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list
-	apt update
-	apt install nodejs -y
-
-kubo:
-	@echo install kubo
-	wget https://github.com/ipfs/kubo/releases/download/v0.31.0/kubo_v0.31.0_linux-arm64.tar.gz
-	tar zxf kubo_v0.31.0_linux-arm64.tar.gz
-	sh kubo/install.sh
-	rm -fr kubo*
-
-pmtiles:
-	@echo install pmtiles
-	wget https://github.com/protomaps/go-pmtiles/releases/download/v1.22.1/go-pmtiles_1.22.1_Linux_arm64.tar.gz
-	tar zxf go-pmtiles_1.22.1_Linux_arm64.tar.gz
-	mv pmtiles /usr/local/bin/
-	rm LICENSE README.md go-pmtiles*
 
 charites:
 	@echo install unvt/charites
@@ -64,24 +17,9 @@ charites:
 
 mbutil:
 	@echo install mb-util
-	apt install -y python3 python3-setuptools
-	git clone https://github.com/mapbox/mbutil.git
-	cd mbutil; python3 setup.py install
-	rm -fr mbutil
-
-serve:
-	@echo install serve
-	npm install -g serve
+	apt install -y python3 python3-pip
+	pip3 install smellman-mbutil --break-system-packages
 
 tileserver-gl-light:
 	@echo install tileserver-gl-light
 	npm install -g tileserver-gl-light
-
-ipfs-init:
-	@echo init ipfs
-	ipfs init --profile=lowpower
-	ipfs config Addresses.Gateway /ip4/0.0.0.0/tcp/8080
-
-ipfs-daemon:
-	@echo start ipfs daemon
-	ipfs daemon &
