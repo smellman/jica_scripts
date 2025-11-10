@@ -47,9 +47,6 @@ practice:
 build:
 	charites build style-practice.yml style-practice.json
 
-pmtiles:
-	pmtiles convert lka.mbtiles lka.pmtiles
-
 deploy:
 	sudo cp lka.pmtiles /opt/niroku/data/vector/
 	sudo cp style-practice.json /opt/niroku/data/vector/
