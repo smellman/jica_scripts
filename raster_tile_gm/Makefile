@@ -8,5 +8,5 @@ generate_tile:
 	gdal_translate -of vrt -expand rgba el.vrt temp.vrt
 	gdal2tiles.py --xyz -s EPSG:4326 -z 0-11 temp.vrt
 
-serve:
-	serve -p 8000 temp/
+deploy:
+	sudo cp -r temp/ /opt/niroku/data/gmlk10/
