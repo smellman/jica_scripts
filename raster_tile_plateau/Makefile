@@ -8,5 +8,5 @@ buildvrt:
 generate_tile:
 	gdal2tiles.py --xyz -z 12-18 temp.vrt
 
-serve:
-	serve -p 8000 temp/
+deploy:
+	sudo cp -r temp/ /opt/niroku/data/plateau/
