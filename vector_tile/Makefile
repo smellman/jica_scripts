@@ -47,8 +47,10 @@ practice:
 build:
 	charites build style-practice.yml style-practice.json
 
-build-ipfs:
-	charites build style-ipfs.yml style-ipfs.json
+convert:
+	pmtiles convert lka.mbtiles lka.pmtiles
 
-ipfs:
-	ipfs add lka.pmtiles
+deploy:
+	sudo cp lka.pmtiles /opt/niroku/data/vector/
+	sudo cp style-practice.json /opt/niroku/data/vector/
+	sudo cp index.html /opt/niroku/data/vector/
