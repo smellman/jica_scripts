@@ -48,6 +48,7 @@ build:
 	charites build style-practice.yml style-practice.json
 
 deploy:
+	sudo mkdir -p /opt/niroku/data/vector/
 	sudo cp lka.pmtiles /opt/niroku/data/vector/
 	sudo cp style-practice.json /opt/niroku/data/vector/
 	sudo cp index.html /opt/niroku/data/vector/
