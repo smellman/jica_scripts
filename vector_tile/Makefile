@@ -47,7 +47,7 @@ practice:
 build:
 	charites build style-practice.yml style-practice.json
 
-convert:
+pmtiles:
 	pmtiles convert lka.mbtiles lka.pmtiles
 
 deploy:
