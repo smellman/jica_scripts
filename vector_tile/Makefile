@@ -36,7 +36,7 @@ generate:
 	  -L roadl:gmlk20/roadl_lka.geojson
 
 tileserver-gl:
-	tileserver-gl-light --port 8000 --bind 0.0.0.0 --file lka.mbtiles
+	tileserver-gl --port 8000 --bind 0.0.0.0 --file lka.mbtiles
 
 serve:
 	serve -p 8000 .
