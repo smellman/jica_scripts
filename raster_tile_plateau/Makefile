@@ -1,5 +1,5 @@
 fetch:
-	wget https://gic-plateau.s3.ap-northeast-1.amazonaws.com/2020/ortho/13213_higashimurayama-shi_2020_ortho_3_op.7z
+	wget https://gsic-opendata.s3.ap-northeast-1.amazonaws.com/national-gov/mlit/city-bureau/3d-city-model/2020/plateau-13213-higashimurayama-shi-2020/ortho/13213_higashimurayama-shi_2020_ortho_3_op.7z
 	7z x 13213_higashimurayama-shi_2020_ortho_3_op.7z
 
 buildvrt:
